@@ -1,0 +1,10 @@
+<h1>Edit a Bean!</h1>
+
+<form action="/beans/<%=@bean.id%>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+
+  <p>Name: <input type="text" name="name" placeholder=<%= @bean.name %>></p>
+  <p>Origin: <input type="text" name="origin" placeholder=<%= @bean.origin %>></p>
+  <p>Roast: <input type="text" name="roast" placeholder=<%= @bean.roast %>></p>
+  <input type="submit">
+</form>

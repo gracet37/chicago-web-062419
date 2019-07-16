@@ -1,0 +1,6 @@
+<h1>All the beans!</h1>
+<% @beans.each do |bean| %>
+  <p>Name: <%= bean.name %></p>
+  <p>Origin: <%= bean.origin %></p>
+  <p>Roast: <%= bean.roast %></p>
+<% end %>
