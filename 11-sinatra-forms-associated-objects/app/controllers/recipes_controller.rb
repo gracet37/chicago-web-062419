@@ -12,16 +12,25 @@ class RecipesController < ApplicationController
   end
 
   post "/recipes" do
-    if params["user"]
-      @user = User.create(params["user"])
-    end
-
-
     @recipe = Recipe.new(params["recipe"])
-    if @recipe.save
+
+    if @recipe.valid?
+      if params["user"]
+        new_user = User.create(params["user"])
+        @recipe.user = new_user
+      end
+      if params["ingredient"]
+        new_ingredient = Ingredient.create(params["ingredient"])
+        @recipe.ingredients << new_ingredient
+      end
+      @recipe.save
       redirect "/recipes/#{@recipe.id}"
     else
-      redirect "/recipes/new"
+      @errors = @recipe.errors.full_messages
+      p @errors
+      @users = User.all
+      @ingredients = Ingredient.all
+      erb :"/recipes/new.html"
     end
   end
 
@@ -29,5 +38,22 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @ingredients = @recipe.ingredients
     erb :"recipes/show.html"
+  end
+
+  get "/recipes/:id/edit" do
+    if Recipe.exists?(params[:id])
+      @recipe = Recipe.find(params[:id])
+      @users = User.all
+      @ingredients = Ingredient.all
+      erb :"recipes/edit.html"
+    else
+      redirect "/recipes"
+    end
+  end
+
+  patch "/recipes/:id" do
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(params["recipe"])
+    redirect "/recipes/#{@recipe.id}"
   end
 end

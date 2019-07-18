@@ -1,1 +1,38 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit a recipe</h1>
+<form action="/recipes/<%=@recipe.id%>" method="POST">
+  <input type="hidden" name="_method" value="PATCH">
+  Name:
+  <input type="text" name="recipe[name]" value="<%= @recipe.name %>">
+  Difficulty:
+  <input type="text" name="recipe[difficulty]" value="<%= @recipe.difficulty %>">
+  Cook time:
+  <input type="text" name="recipe[cook_time]"value="<%= @recipe.cook_time %>">
+
+  <select name="recipe[user_id]">
+    <!-- <option disabled selected value> -- select a user -- </option> -->
+    <% @users.each do |user| %>
+      <% if user == @recipe.user %>
+        <option selected value="<%= user.id %>"> <%=user.username%></option>
+      <% else %>
+        <option value="<%= user.id %>"> <%=user.username%> </option>
+      <% end %>
+    <% end %>
+  </select>
+  <div>
+    <p>Add a New User: <input type="text" name="user[username]"></p>
+  </div>
+
+  <% @ingredients.each do |ingredient| %>
+    <div>
+
+      <input <%if @recipe.ingredients.include?(ingredient) %> checked <% end %>  type="checkbox" name="recipe[ingredient_ids][]" id="<%=ingredient.id%>" value="<%=ingredient.id%>">
+      <label for="<%=ingredient.id%>"><%=ingredient.name%></label>
+
+    </div>
+  <% end %>
+  <br>
+  <p>Add a New Ingredient: </p>
+  <input type="text" name="ingredient[name]">
+
+  <input type="submit">
+</form>
