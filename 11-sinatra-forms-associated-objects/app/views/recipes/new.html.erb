@@ -1,0 +1,34 @@
+<h1>Add a new recipe</h1>
+<% if @errors %>
+  <%= @errors %>
+<% end %>
+<form action="/recipes" method="POST">
+  Name:
+  <input type="text" name="recipe[name]">
+  Difficulty:
+  <input type="text" name="recipe[difficulty]">
+  Cook time:
+  <input type="text" name="recipe[cook_time]">
+
+  <select name="recipe[user_id]">
+    <option disabled selected value> -- select a user -- </option>
+    <% @users.each do |user| %>
+      <option value="<%= user.id %>"> <%=user.username%> </option>
+    <% end %>
+  </select>
+  <div>
+    <p>Add a New User: <input type="text" name="user[username]"></p>
+  </div>
+
+  <% @ingredients.each do |ingredient| %>
+    <div>
+      <input type="checkbox" name="recipe[ingredient_ids][]" id="<%=ingredient.id%>" value="<%=ingredient.id%>">
+      <label for="<%=ingredient.id%>"><%=ingredient.name%></label>
+    </div>
+  <% end %>
+  <br>
+  <p>Add a New Ingredient: </p>
+  <input type="text" name="ingredient[name]">
+
+  <input type="submit">
+</form>

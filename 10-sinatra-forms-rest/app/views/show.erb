@@ -1,0 +1,7 @@
+<h1><%= @bean.name %></h1>
+<form action="/beans/<%=@bean.id%>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+
+  <input type="submit" value="Delete bean">
+
+</form>
