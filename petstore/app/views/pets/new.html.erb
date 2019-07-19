@@ -1,0 +1,8 @@
+
+<%= form_tag(pets_path) do %>
+  <%= label_tag :name %>
+  <%= text_field_tag "pet[name]" %>
+  <%= label_tag :height %>
+  <%= number_field_tag "pet[height]" %>
+  <%= submit_tag %>
+<% end %>
