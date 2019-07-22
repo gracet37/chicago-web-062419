@@ -1,0 +1,16 @@
+<!-- <form action="/doctors" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  Name:
+  <input type="text" name="doctor[name]">
+  Specialty:
+  <input type="text" name="doctor[specialty]">
+  <input type="submit">
+</form> -->
+
+<%= form_tag("/doctors", method:"post") do %>
+  <%= label_tag "name:" %>
+  <%= text_field(:doctor, :name) %>
+  <%= label_tag "specialty:" %>
+  <%= text_field(:doctor, :specialty) %>
+  <%= submit_tag("Submit") %>
+<% end %>

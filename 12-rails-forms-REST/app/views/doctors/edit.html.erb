@@ -1,0 +1,7 @@
+<%= form_tag("/doctors/#{@doctor.id}", method:"patch") do %>
+  <%= label_tag "name:" %>
+  <%= text_field(:doctor, :name) %>
+  <%= label_tag "specialty:" %>
+  <%= text_field(:doctor, :specialty) %>
+  <%= submit_tag("Submit") %>
+<% end %>
