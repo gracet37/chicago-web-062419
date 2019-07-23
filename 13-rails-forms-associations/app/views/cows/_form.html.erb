@@ -1,0 +1,11 @@
+<!-- TODO: Figure out the "Rails Way" to do this, then flesh out this form -->
+
+<%= form_for @cow do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :spots %>
+  <%= f.number_field :spots %>
+  <!-- 1. FIELD NAME, 2. COLLECTION TO ITERATE, 3. WHAT VALUE TO SET FOR THE FIELD NAME (CALLED ON COLLECTION MEMBER), 4. WHAT VALUE TO SHOW THE USER (CALLED ON COLL. MEMBER) -->
+  <%= f.collection_select :farmer_id, @farmers, :id, :name %>
+  <%= f.submit "MOOOOOVE ALONG NOW" %>
+<% end %>
