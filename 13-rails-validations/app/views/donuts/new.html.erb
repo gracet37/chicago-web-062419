@@ -1,0 +1,17 @@
+<h1>Make a New Donut</h1>
+<%= flash[:message] %>
+
+<%= form_for @donut do |f| %>
+  <%= f.label "Flavor" %>
+  <%= f.text_field :flavor %>
+  <%= f.label "Price" %>
+  <%= f.text_field :price %>
+  <br>
+  <%= f.label "Sprinkles?" %>
+  <%= f.radio_button :sprinkles, true %>
+  <%= f.label :sprinkles, "True" %>
+  <%= f.radio_button :sprinkles, false %>
+  <%= f.label :sprinkles, "False" %>
+  <br>
+  <%= f.submit %>
+<% end %>
