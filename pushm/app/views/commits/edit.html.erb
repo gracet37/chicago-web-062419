@@ -1,0 +1,16 @@
+<h1>Edit Existing Commit</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+  <% end %>
+<% end %>
+
+<%= form_for @commit, as: :new_commit, url: commit_path(@commit), method: "put" do |f| %>
+  <%= f.label :message %>
+  <%= f.text_field :message %>
+  <%= f.label :branch_name %>
+  <%= f.text_field :branch_name %>
+  <%= f.collection_select(:author_id, @authors, :id, :name, prompt: true) %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1>Authors!</h1>
+
+<% @authors.each_with_index do |author, index| %>
+  <p><%= index + 1 %>. <%= link_to author.name, author_path(author) %></p>
+
+<% end %>

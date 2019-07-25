@@ -1,0 +1,7 @@
+<h1>Your Commit Message: <%= @commit.message %></h1>
+<h2>from branch named <%= @commit.branch_name %></h2>
+<p><em>Written by <%= link_to "#{@commit.author_name} (ID num: #{@commit.author_id})", author_path(@commit.author) %></em></p>
+
+<%= link_to "edit this!", edit_commit_path %>
+
+<%= link_to "create another?", new_commit_path %>

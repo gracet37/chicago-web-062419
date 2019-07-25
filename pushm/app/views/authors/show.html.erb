@@ -1,0 +1,15 @@
+<%= link_to "See all Authors", authors_path %>
+
+<h1>Meet <%= @author.name %></h1>
+
+<% if @author.has_commits? %>
+  <p>they have written the following commits:</p>
+  <% @author.commits.each do |commit| %>
+    <div class="commit-by-author">
+      <h2>Branch: <%= commit.branch_name %></h2>
+      <h3>Message: <%= link_to commit.message, commit %></h3>
+    </div>
+  <% end %>
+<% else %>
+  <p>this author hasn't committed anything yet. (cold feet?)</p>
+<% end %>
