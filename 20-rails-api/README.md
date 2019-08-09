@@ -16,33 +16,7 @@ layout: post
 
 - [Rails API Docs][rails-api-docs]
 
-## Example Videos
 
-- Sample One:
-
-  - [Part One][sample-vid-1-part-1]
-  - [Part Two][sample-vid-1-part-2]
-
-- Sample Two
-
-  - [Part One][sample-vid-2-part-1]
-  - [Part Two][sample-vid-2-part-2]
-
-* Starter Code:
-  - [Backend][starter-code-backend]
-  - [Frontend][starter-code-frontend]
-
-## Outline
-
-```text
-	10m | Review of a regular Rails Project (that serves HTML)
-	 5m | Telling our rails project to respond_to JSON
-	10m | Cover the benefits of serving JSON
-	 5m | Review of JSON and request/response cycle
-	15m | Make a fetch request from the browser and discuss CORS
-	----|----
-	45m | TOTAL
-```
 
 ### Fullstack Rails App Review
 
