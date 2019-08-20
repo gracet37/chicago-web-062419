@@ -1,0 +1,82 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Soul Kiss",
+      "author": "Shay Youngblood",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/31AYTZWPCPL._SX309_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Children of Blood & Bone",
+      "author": "Tomi Adeyemi",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/61SB-c0mHGL._SX329_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 3,
+      "title": "White Teeth",
+      "author": "Zadie Smith",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/412BMH3wiIL._SX322_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 4,
+      "author": "Zadie Smith",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/41oS2tKs2TL._SX324_BO1,204,203,200_.jpg",
+      "title": "On Beauty"
+    },
+    {
+      "id": 5,
+      "author": "Zadie Smith",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51Vfwe7%2BJ5L._SX324_BO1,204,203,200_.jpg",
+      "title": "Swing Time"
+    },
+    {
+      "id": 6,
+      "author": "Zadie Smith",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/517BqHtwIKL._SX324_BO1,204,203,200_.jpg",
+      "title": "Feel Free"
+    },
+    {
+      "id": 7,
+      "author": "Maya Angelou",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/41SKsBaGXRL._SX301_BO1,204,203,200_.jpg",
+      "title": "I Know Why the Caged Bird Sings"
+    },
+    {
+      "id": 8,
+      "author": "Toni Morrison ",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/413-xT0izBL._SX322_BO1,204,203,200_.jpg",
+      "title": "The Bluest Eye"
+    },
+    {
+      "title": "The Long Way To A Small Angry Planet",
+      "author": "Becky Chambers",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51Keam5kKXL._SX330_BO1,204,203,200_.jpg",
+      "id": 9
+    },
+    {
+      "title": "Catch-22",
+      "author": "Joseph Heller",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Catch22.jpg/220px-Catch22.jpg",
+      "id": 10
+    },
+    {
+      "title": "Everything Is Illuminated",
+      "author": "Jonathan Safran Foer",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51m%2BXj6mAwL._SX330_BO1,204,203,200_.jpg",
+      "id": 11
+    },
+    {
+      "title": "Lord of the Rings",
+      "author": "JRR Tolkien",
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51tW-UJVfHL._SX321_BO1,204,203,200_.jpg",
+      "id": 12
+    },
+    {
+      "title": "The Cat In The Hat",
+      "author": "Dr Seuss",
+      "img": "https://target.scene7.com/is/image/Target/GUEST_0a53bc0b-ac19-4cf3-bbf5-24a8f46e755a?wid=488&hei=488&fmt=pjpeg",
+      "id": 13
+    }
+  ]
+}
