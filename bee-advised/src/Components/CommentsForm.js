@@ -2,17 +2,16 @@ import React, { Component } from 'react'
 
 class CommentsForm extends Component {
   constructor(props) {
-    console.log(props.addComment)
     super();
 
     this.state = {
       username: "",
-      body: ""
+      body: "",
     }
   }
 
   handleFormInputChange = (event) => {
-    console.log(event.target.name)
+    console.log(this.props.advice.slip_id)
     this.setState({ [event.target.name]: event.target.value });
   }
 

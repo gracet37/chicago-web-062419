@@ -7,8 +7,8 @@ class CommentsContainer extends Component {
     super(props);
     this.state = {
       comments: [
-        { username: "PLEASE WAIT", body: "LOADING..." }
-      ]
+        { username: "PLEASE WAIT", body: "LOADING...", adviceId: "0", id: "0" }
+      ],
     }
   }
 
@@ -20,7 +20,19 @@ class CommentsContainer extends Component {
       });
   }
 
+  filteredComments = () => {
+    const currentAdviceId = this.props.advice.slip_id;
+    const filtered = this.state.comments.filter((comment) => {
+      return comment.adviceId === currentAdviceId;
+    });
+    return filtered;
+  }
+
   addComment = (newComment) => {
+    // Attach current advice to the comment being added
+    newComment.adviceId = this.props.advice.slip_id;
+
+    // Build object to send with post fetch
     const postObj = {
       method: 'POST',
       headers: {
@@ -28,9 +40,13 @@ class CommentsContainer extends Component {
         },
       body: JSON.stringify(newComment)
     }
+
+    // Update our "backend"
     fetch('http://localhost:3000/comments', postObj)
       .then(res => res.json())
       .then(res => console.log("SWEET"));
+
+    // Update client-side state
     this.setState((prevState) => {
       return { comments: [...prevState.comments, newComment] }
     })
@@ -39,8 +55,8 @@ class CommentsContainer extends Component {
   render(){
     return(
       <div className="test">
-        <CommentsList comments={this.state.comments}/>
-        <CommentsForm addComment={this.addComment}/>
+        <CommentsList comments={this.filteredComments()}/>
+        <CommentsForm addComment={this.addComment} advice={ this.props.advice }/>
         <br/>
       </div>
     )

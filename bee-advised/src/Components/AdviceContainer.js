@@ -40,7 +40,7 @@ class AdviceContainer extends Component {
       <div>
         <BuzzerButton adviceFunction={this.getRandomAdvice}/>
         <AdviceCard adviceBody={ this.state.advice.body }/>
-        <CommentsContainer />
+        <CommentsContainer advice={ this.state.advice } />
       </div>
     )
   }

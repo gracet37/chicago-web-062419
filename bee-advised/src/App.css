@@ -35,17 +35,27 @@
 .advice-card {
   width: 50vw;
   min-height: 30vh;
-  max-height:80vh;
+  max-height: 60vh;
   margin: auto;
 }
 
 .advice-body {
   position: relative;
-  width: 35vw;
-  bottom: 37vh;
-  left: 2vw;
+  width: 30vw;
+  bottom: 30vh;
+  left: 5vw;
+  font-size: 1em;
 }
 
 .bee-pic {
-  height: 80vh;
+  height: 60vh;
+}
+
+header h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#buzzer-button {
+  
 }

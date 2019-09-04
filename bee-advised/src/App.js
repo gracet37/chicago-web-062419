@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>BEE ADVISED</h1>
-        <h2>The App Where You Judge If Advice Is Good For Bees</h2>
+        <h3>The App Where You Judge If Advice Is Good For Bees</h3>
       </header>
       <AdviceContainer />
     </div>
