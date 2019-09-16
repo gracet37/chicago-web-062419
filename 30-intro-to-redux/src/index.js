@@ -1,62 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import logo from "./logo.svg";
 import "./App.css";
+import App from './App'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 
-class App extends Component {
-  state = { count: 0 };
-
-  increment = () => {
-    this.setState(prevState => ({ count: prevState.count + 1 }));
-  };
-
-  decrement = () => {
-    this.setState(prevState => ({ count: prevState.count - 1 }));
-  };
-
-  render() {
-    return (
-      <div className="App">
-        <Header count={this.state.count} />
-        <Counter
-          count={this.state.count}
-          increment={this.increment}
-          decrement={this.decrement}
-        />
-      </div>
-    );
+const reducer = (oldState={ count: 0 }, action) => {
+  // console.log("action", action, "stored state", oldState)
+  switch(action.type) {
+    case 'CLICKED_PLUS':
+      const foobar = oldState.count + 1
+      return { count: foobar }
+    case 'CLICKED_MINUS':
+      return { count: oldState.count - 1 }
+    case 'RESET_COUNTER':
+      return { count: 0 }
+    default: return oldState;
   }
+
 }
 
-class Header extends Component {
-  renderDescription = () => {
-    const remainder = this.props.count % 5;
-    const upToNext = 5 - remainder;
-    return `The current count is less than ${this.props.count + upToNext}`;
-  };
+const store = createStore(reducer)
 
-  render() {
-    return (
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Welcome to React</h1>
-        <h3>{this.renderDescription()}</h3>
-      </header>
-    );
-  }
-}
-
-class Counter extends Component {
-  render() {
-    return (
-      <div className="Counter">
-        <h1>{this.props.count}</h1>
-        <button onClick={this.props.decrement}> - </button>
-        <button onClick={this.props.increment}> + </button>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
